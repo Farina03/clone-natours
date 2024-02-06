@@ -93,6 +93,7 @@ header {
 }
 .header-main-text {
   display: block;
+  font-weight: 400;
   font-size: 6rem;
   letter-spacing: 3.5rem;
   animation: leftToRight 1s ease-out;
@@ -164,7 +165,9 @@ header {
     justify-content: center; */
 }
 .navigation-checkbox {
-  opacity: 0;
+  display: none;
+  /* z-index: 3000;
+  opacity: 1; */
   /* background-color: white;
     height: 7rem;
     width: 7rem;
@@ -186,7 +189,7 @@ header {
   top: 6rem;
   right: 6rem;
   border-radius: 50%;
-  z-index: 1500;
+  z-index: 2000;
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.1);
   text-align: center;
   cursor: pointer;
@@ -195,6 +198,7 @@ header {
   height: 6rem;
   width: 6rem;
   border-radius: 50%;
+  /* position: relative; */
   position: fixed;
   top: 6.5rem;
   right: 6.5rem;
@@ -207,6 +211,7 @@ header {
   opacity: 0;
   height: 100vh;
   position: fixed;
+  /* position: absolute; */
   top: 0;
   left: 0;
   width: 0;
@@ -219,20 +224,84 @@ header {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
-  width: 100%;
+  width: 80%;
   list-style: none;
   /* z-index: 2500; */
 }
 .navigation-checkbox:checked ~ .navigation-background {
-  opacity: 1;
+  /* opacity: 1; */
   transform: scale(80);
 }
 .navigation-checkbox:checked ~ .navigation-nav {
   opacity: 1;
   width: 100%;
 }
+.navigation-icon {
+  position: relative;
+  margin-top: 3rem;
+}
+.navigation-icon,
+.navigation-icon::before,
+.navigation-icon::after {
+  width: 3rem;
+  height: 2px;
+  background-color: #333;
+  display: inline-block;
+}
+.navigation-icon::before,
+.navigation-icon::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  transition: all 0.2s;
+}
+.navigation-icon::before {
+  top: -1rem;
+}
+.navigation-icon::after {
+  top: 1rem;
+}
+
+.navigation-checkbox:checked + .navigation-check .navigation-icon {
+  background-color: transparent;
+}
+
+.navigation-checkbox:checked + .navigation-check .navigation-icon::before {
+  top: 0;
+  transform: rotate(135deg);
+}
+
+.navigation-checkbox:checked + .navigation-check .navigation-icon::after {
+  top: 0;
+  transform: rotate(-135deg);
+}
+
 .navigation-item {
   margin: 1rem;
+  padding: 0;
+}
+.navigation-link {
+  text-decoration: none;
+  color: white;
+  font-size: 3rem;
+  text-transform: uppercase;
+  font-weight: 300;
+  transition: all 0.4s ease;
+  display: inline-block;
+  background-image: linear-gradient(
+    120deg,
+    transparent 0%,
+    transparent 50%,
+    #fff 50%
+  );
+  background-size: 220%;
+  padding: 0.5rem 2rem;
+}
+.navigation-link:hover {
+  background-position: 100%;
+  color: #55c57a;
+  transform: translateX(1rem);
+  transition: all 0.4s ease;
 }
 .section-about {
   background-color: #f7f7f7;
@@ -853,7 +922,6 @@ li {
   /* padding: 0 10rem; */
   min-width: 100rem;
   min-height: 60rem;
-
 }
 .form-outer {
   width: 40%;
@@ -884,8 +952,8 @@ li {
   border-bottom: 3px solid #55c57a;
 }
 .form-input::placeholder {
-    color: #777;
-    opacity: .8;
+  color: #777;
+  opacity: 0.8;
 }
 .form-input:focus::placeholder {
   color: transparent;
@@ -895,9 +963,9 @@ li {
   opacity: 1;
 }
 .form-radio-element {
-    display: flex;              
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .form-radio-outer {
   margin-right: 2rem;
@@ -906,9 +974,9 @@ li {
   align-items: center;
 }
 .form-radio-input {
-    height: 3rem;
-    width: 3rem;
-    opacity: 0;
+  height: 3rem;
+  width: 3rem;
+  opacity: 0;
 }
 .form__radio-label {
   font-size: 1.6rem;
@@ -943,7 +1011,7 @@ li {
   opacity: 1;
 }
 .margin-zero {
-    margin: 0;
-    padding: 0;
-    /* max-width: 20%; */
+  margin: 0;
+  padding: 0;
+  /* max-width: 20%; */
 }

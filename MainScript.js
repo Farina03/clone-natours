@@ -1,12 +1,12 @@
-// var navigationCheckbox = document.getElementById("navigation-checkbox")
+var navigationCheckbox = document.getElementById("navigation-checkbox")
+var navigationToggler = document.getElementById("navigation-check")
+navigationToggler.addEventListener('click', function () {
+    navigationCheckbox.checked = ! navigationCheckbox.checked
+})
 
-// navigationCheckbox.addEventListener('click', function () {
-//     navigationCheckbox.checked = !navigationCheckbox.checked
-// })
-
-var bookRadioInputSmall = document.getElementById("form-radio-small")
-var bookRadioInputLarge = document.getElementById("form-radio-large")
-var bookRadioToggle = document.getElementById("form__radio-button")
+// var bookRadioInputSmall = document.getElementById("form-radio-small")
+// var bookRadioInputLarge = document.getElementById("form-radio-large")
+// var bookRadioToggle = document.getElementById("form__radio-button")
 
 var bgvideo = document.getElementById("bg-video")
 bgvideo.playbackRate = 0.5
