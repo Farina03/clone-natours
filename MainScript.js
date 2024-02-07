@@ -4,9 +4,20 @@ navigationToggler.addEventListener('click', function () {
     navigationCheckbox.checked = ! navigationCheckbox.checked
 })
 
-// var bookRadioInputSmall = document.getElementById("form-radio-small")
-// var bookRadioInputLarge = document.getElementById("form-radio-large")
-// var bookRadioToggle = document.getElementById("form__radio-button")
+var bookRadioInputSmall = document.getElementById("form-radio-small")
+var bookRadioInputLarge = document.getElementById("form-radio-large")
+var bookTogglerSmall = document.getElementById("small")
+var bookTogglerLarge = document.getElementById("large")
+bookTogglerSmall.addEventListener('click', function() {
+    bookRadioInputSmall.checked = ! bookRadioInputSmall.checked
+    // if(bookRadioInputLarge.checked)
+    //     bookRadioInputLarge.checked = !bookRadioInputLarge.checked
+})
+bookTogglerLarge.addEventListener('click', function() {
+    bookRadioInputLarge.checked = ! bookRadioInputLarge.checked
+    // if(bookRadioInputSmall.checked)
+    //     bookRadioInputSmall.checked = !bookRadioInputSmall.checked
+})
 
 var bgvideo = document.getElementById("bg-video")
 bgvideo.playbackRate = 0.5
